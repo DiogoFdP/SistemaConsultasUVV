@@ -10,7 +10,7 @@ namespace GestaoConsultasUVV.Controllers
     {
         private readonly AppDbContext _context;
 
-        // Injeção de dependência do banco de dados
+        
         public ContaController(AppDbContext context)
         {
             _context = context;
@@ -61,7 +61,7 @@ namespace GestaoConsultasUVV.Controllers
                 return View();
             }
 
-            // Cria o "Crachá" do usuário logado (Cookie)
+            
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),

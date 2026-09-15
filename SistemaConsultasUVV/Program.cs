@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Registrar o DbContext configurando a Connection String
+
 builder.Services.AddDbContext<GestaoConsultasUVV.Data.AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

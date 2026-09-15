@@ -6,7 +6,7 @@ using System.Security.Claims;
 
 namespace GestaoConsultasUVV.Controllers
 {
-    [Authorize] // <-- ISSO GARANTE A SEGURANÇA EXIGIDA NO TRABALHO!
+    [Authorize] 
     public class ConsultaController : Controller
     {
         private readonly AppDbContext _context;
@@ -46,7 +46,7 @@ namespace GestaoConsultasUVV.Controllers
         {
             consulta.UsuarioId = ObterUsuarioLogadoId();
 
-            // Ignora a validação do objeto Usuário, pois só precisamos do UsuarioId
+            
             ModelState.Remove("Usuario");
 
             if (ModelState.IsValid)
