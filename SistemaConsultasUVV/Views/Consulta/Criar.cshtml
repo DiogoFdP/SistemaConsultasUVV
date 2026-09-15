@@ -1,0 +1,40 @@
+﻿@model GestaoConsultasUVV.Models.Consulta
+@{
+    ViewData["Title"] = "Nova Consulta";
+}
+
+<div class="row mt-4">
+    <div class="col-md-6 offset-md-3">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Agendar Nova Consulta</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Criar">
+                    <div class="mb-3">
+                        <label asp-for="Especialidade" class="form-label">Especialidade Médica</label>
+                        <input asp-for="Especialidade" class="form-control" placeholder="Ex: Cardiologista, Dentista..." />
+                        <span asp-validation-for="Especialidade" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="DataHora" class="form-label">Data e Hora</label>
+                        <input asp-for="DataHora" type="datetime-local" class="form-control" />
+                        <span asp-validation-for="DataHora" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Descricao" class="form-label">Descrição (Opcional)</label>
+                        <textarea asp-for="Descricao" class="form-control" rows="3" placeholder="Motivo da consulta, sintomas..."></textarea>
+                        <span asp-validation-for="Descricao" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+                        <button type="submit" class="btn btn-success">Agendar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
